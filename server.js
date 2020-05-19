@@ -5,6 +5,9 @@ const app = express();
 
 connectDB();
 
+// Init Middleware
+app.use(express.json({ extended: false }));
+
 app.get("/", (req, res) =>
   res.send("it is running on heroku and it is connected to mango db")
 );
