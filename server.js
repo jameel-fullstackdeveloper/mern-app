@@ -1,8 +1,12 @@
 const express = require("express");
+const connectDB = require("./config/db");
 
 const app = express();
 
-app.get("/", (req, res) => res.send("it is running on heroku wow"));
+connectDB();
+
+app.get("/", (req, res) => res.send("it is running on heroku and it is connected to mango db"));
+
 
 const PORT = process.env.PORT || 5000;
 
